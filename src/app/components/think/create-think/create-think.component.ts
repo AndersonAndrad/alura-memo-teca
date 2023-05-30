@@ -10,8 +10,16 @@ export class CreateThinkComponent {
     id: '1',
     content: 'Aprendendo angular',
     autor: 'dev',
-    model: '',
+    model: 'modelo1',
   };
+
+  createThink() {
+    throw new Error('Method not implemented.');
+  }
+
+  cancel() {
+    throw new Error('Method not implemented.');
+  }
 }
 
 interface Think {
