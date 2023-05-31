@@ -104,7 +104,9 @@
     </div>
     <div class="acoes">
       <button (click)="createThink()" class="botao">Salvar</button>
-      <button (click)="cancel()" class="botao">Cancelar</button>
+      <button (click)="cancel()" [routerLink]="'/'" class="botao">
+        Cancelar
+      </button>
     </div>
   </form>
 </section>
