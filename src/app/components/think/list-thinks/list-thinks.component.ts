@@ -1,4 +1,4 @@
-import { ModelThink, Think } from '../think/think.component';
+import { Think } from '../think/think.component';
 
 import { Component } from '@angular/core';
 
@@ -9,11 +9,11 @@ import { Component } from '@angular/core';
 })
 export class ListThinksComponent {
   thinkList: Think[] = [
-    {
-      id: '1',
-      content: 'tes',
-      autor: 'tes',
-      model: ModelThink.MODEL1,
-    },
+    // {
+    //   id: '1',
+    //   content: 'tes',
+    //   autor: 'tes',
+    //   model: ModelThink.MODEL1,
+    // },
   ];
 }
