@@ -12,6 +12,14 @@ export class ThinkComponent {
     autor: '',
     model: ModelThink.MODEL1,
   };
+
+  getClassWidthThink(): string {
+    let widthThink: string = 'p';
+
+    if (this.think.content.length > 256) widthThink = 'g';
+
+    return `pensamento-${widthThink}`;
+  }
 }
 export interface Think {
   id: string;

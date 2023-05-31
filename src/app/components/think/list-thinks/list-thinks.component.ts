@@ -1,4 +1,4 @@
-import { Think } from '../think/think.component';
+import { ModelThink, Think } from '../think/think.component';
 
 import { Component } from '@angular/core';
 
@@ -9,11 +9,18 @@ import { Component } from '@angular/core';
 })
 export class ListThinksComponent {
   thinkList: Think[] = [
-    // {
-    //   id: '1',
-    //   content: 'tes',
-    //   autor: 'tes',
-    //   model: ModelThink.MODEL1,
-    // },
+    {
+      id: '1',
+      content: 'tes',
+      autor: 'tes',
+      model: ModelThink.MODEL1,
+    },
+    {
+      id: '1',
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore est perspiciatis quos distinctio magnam consequuntur dicta architecto iusto nihil ullam veniam officia, tempora porro, quia laborum libero. Dignissimos, illum quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore est perspiciatis quos distinctio magnam consequuntur dicta architecto iusto nihil ullam veniam officia, tempora porro, quia laborum libero. Dignissimos, illum quod?',
+      autor: 'tes',
+      model: ModelThink.MODEL2,
+    },
   ];
 }
