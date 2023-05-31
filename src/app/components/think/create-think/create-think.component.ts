@@ -1,3 +1,5 @@
+import { ModelThink, Think } from '../think/think.component';
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,7 +12,7 @@ export class CreateThinkComponent {
     id: '1',
     content: 'Aprendendo angular',
     autor: 'dev',
-    model: 'modelo1',
+    model: ModelThink.MODEL1,
   };
 
   createThink() {
@@ -20,11 +22,4 @@ export class CreateThinkComponent {
   cancel() {
     throw new Error('Method not implemented.');
   }
-}
-
-interface Think {
-  id: string;
-  content: string;
-  model: string;
-  autor: string;
 }

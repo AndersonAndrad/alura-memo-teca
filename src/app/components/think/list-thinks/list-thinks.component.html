@@ -5,4 +5,9 @@
       Adicionar pensamento
     </button>
   </header>
+  <div class="mural">
+    <div *ngFor="let think of thinkList">
+      <app-think [think]="think"></app-think>
+    </div>
+  </div>
 </section>
