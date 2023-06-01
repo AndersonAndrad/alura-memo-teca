@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Think } from 'src/app/interfaces/think.interface';
+import { HashUtil } from 'src/app/utils/hash.util';
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +16,11 @@ export class ThinkService {
 
   listAll() {
     return this.httpClient.get<Think[]>(this.DEFAULT_URL);
+  }
+
+  create(think: Omit<Think, 'id'>) {
+    const id: string = HashUtil.generate();
+
+    return this.httpClient.post<void>(this.DEFAULT_URL, { id, ...think });
   }
 }

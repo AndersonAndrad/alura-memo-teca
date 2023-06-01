@@ -9,4 +9,5 @@ export enum ModelThink {
   MODEL1 = 'modelo1',
   MODEL2 = 'modelo3',
   MODEL3 = 'modelo2',
+  DEFAULT = '',
 }

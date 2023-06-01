@@ -1,6 +1,8 @@
 import { ModelThink, Think } from 'src/app/interfaces/think.interface';
 
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ThinkService } from 'src/app/services/think/think.service';
 
 @Component({
   selector: 'app-create-think',
@@ -8,15 +10,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-think.component.scss'],
 })
 export class CreateThinkComponent {
-  think: Think = {
-    id: '1',
-    content: 'Aprendendo angular',
-    autor: 'dev',
-    model: ModelThink.MODEL1,
+  constructor(private thinkService: ThinkService, private router: Router) {}
+
+  think: Omit<Think, 'id'> = {
+    content: '',
+    autor: '',
+    model: ModelThink.DEFAULT,
   };
 
   createThink() {
-    throw new Error('Method not implemented.');
+    this.thinkService.create(this.think).subscribe({
+      next: () => this.router.navigateByUrl('/'),
+    });
   }
 
   cancel() {
