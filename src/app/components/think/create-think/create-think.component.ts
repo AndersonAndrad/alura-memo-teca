@@ -1,4 +1,4 @@
-import { ModelThink, Think } from '../think/think.component';
+import { ModelThink, Think } from 'src/app/interfaces/think.interface';
 
 import { Component } from '@angular/core';
 
