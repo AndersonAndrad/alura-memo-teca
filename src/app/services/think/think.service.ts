@@ -23,4 +23,16 @@ export class ThinkService {
 
     return this.httpClient.post<void>(this.DEFAULT_URL, { id, ...think });
   }
+
+  delete(thinkId: string) {
+    const url: string = `${this.DEFAULT_URL}/${thinkId}`;
+
+    return this.httpClient.delete<void>(url);
+  }
+
+  getThinkById(thinkId: string) {
+    const url: string = `${this.DEFAULT_URL}/${thinkId}`;
+
+    return this.httpClient.get<Think>(url);
+  }
 }
