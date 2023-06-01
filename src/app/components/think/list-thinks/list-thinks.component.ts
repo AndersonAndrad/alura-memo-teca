@@ -1,26 +1,27 @@
-import { ModelThink, Think } from 'src/app/interfaces/think.interface';
+import { Component, OnInit } from '@angular/core';
+import { Think } from 'src/app/interfaces/think.interface';
 
-import { Component } from '@angular/core';
+import { ThinkService } from 'src/app/services/think/think.service';
 
 @Component({
   selector: 'app-list-thinks',
   templateUrl: './list-thinks.component.html',
   styleUrls: ['./list-thinks.component.scss'],
 })
-export class ListThinksComponent {
-  thinkList: Think[] = [
-    {
-      id: '1',
-      content: 'tes',
-      autor: 'tes',
-      model: ModelThink.MODEL1,
-    },
-    {
-      id: '1',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore est perspiciatis quos distinctio magnam consequuntur dicta architecto iusto nihil ullam veniam officia, tempora porro, quia laborum libero. Dignissimos, illum quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore est perspiciatis quos distinctio magnam consequuntur dicta architecto iusto nihil ullam veniam officia, tempora porro, quia laborum libero. Dignissimos, illum quod?',
-      autor: 'tes',
-      model: ModelThink.MODEL2,
-    },
-  ];
+export class ListThinksComponent implements OnInit {
+  constructor(private thinkService: ThinkService) {}
+
+  thinkList: Think[] = [];
+
+  ngOnInit(): void {
+    this.loadThinks();
+  }
+
+  loadThinks() {
+    this.thinkService.listAll().subscribe({
+      next: (thinks) => {
+        this.thinkList = thinks;
+      },
+    });
+  }
 }
