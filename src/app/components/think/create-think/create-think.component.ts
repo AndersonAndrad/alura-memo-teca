@@ -3,6 +3,7 @@ import { ModelThink, Think } from 'src/app/interfaces/think.interface';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThinkService } from 'src/app/services/think/think.service';
+import { clearString } from 'src/app/utils/string.util';
 
 @Component({
   selector: 'app-create-think',
@@ -19,7 +20,13 @@ export class CreateThinkComponent {
   };
 
   createThink() {
-    this.thinkService.create(this.think).subscribe({
+    const think: Omit<Think, 'id'> = {
+      autor: clearString(this.think.autor),
+      content: clearString(this.think.content),
+      model: this.think.model,
+    };
+
+    this.thinkService.create(think).subscribe({
       next: () => this.router.navigateByUrl('/'),
     });
   }
