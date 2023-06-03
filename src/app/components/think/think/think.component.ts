@@ -30,4 +30,9 @@ export class ThinkComponent {
     const router = `/pensamentos/excluir-pensamentos/${this.think.id}`;
     this.router.navigateByUrl(router);
   }
+
+  navigateToEditThinking() {
+    const router = `/pensamentos/editar-pensamentos/${this.think.id}`;
+    this.router.navigateByUrl(router);
+  }
 }

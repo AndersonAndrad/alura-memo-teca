@@ -35,4 +35,9 @@ export class ThinkService {
 
     return this.httpClient.get<Think>(url);
   }
+
+  update(thinkingId: string, thinking: Omit<Think, 'id'>) {
+    const url: string = `${this.DEFAULT_URL}/${thinkingId}`;
+    return this.httpClient.put(url, thinking);
+  }
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ConfirmDeleteThinkComponent } from './components/modal/confirm-delete-think/confirm-delete-think.component';
 import { CreateThinkComponent } from './components/think/create-think/create-think.component';
+import { EditThinkingComponent } from './components/think/edit-thinking/edit-thinking.component';
 import { ListThinksComponent } from './components/think/list-thinks/list-thinks.component';
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'pensamentos/excluir-pensamentos/:id',
     component: ConfirmDeleteThinkComponent,
+  },
+  {
+    path: 'pensamentos/editar-pensamentos/:id',
+    component: EditThinkingComponent,
   },
 ];
 

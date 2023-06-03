@@ -10,6 +10,7 @@ import { CreateThinkComponent } from './components/think/create-think/create-thi
 import { ListThinksComponent } from './components/think/list-thinks/list-thinks.component';
 import { ThinkComponent } from './components/think/think/think.component';
 import { ConfirmDeleteThinkComponent } from './components/modal/confirm-delete-think/confirm-delete-think.component';
+import { EditThinkingComponent } from './components/think/edit-thinking/edit-thinking.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ConfirmDeleteThinkComponent } from './components/modal/confirm-delete-t
     ListThinksComponent,
     ThinkComponent,
     ConfirmDeleteThinkComponent,
+    EditThinkingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
