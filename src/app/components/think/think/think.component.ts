@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ModelThink, Think } from 'src/app/interfaces/think.interface';
+import { ModelThinking, Thinking } from 'src/app/interfaces/think.interface';
 
 import { Router } from '@angular/router';
 
@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./think.component.scss'],
 })
 export class ThinkComponent {
-  @Input() think: Think = {
+  @Input() think: Thinking = {
     id: '',
     content: '',
     autor: '',
-    model: ModelThink.MODEL1,
+    model: ModelThinking.MODEL1,
   };
 
   constructor(private router: Router) {}

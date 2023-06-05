@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Think } from 'src/app/interfaces/think.interface';
+import { Thinking } from 'src/app/interfaces/think.interface';
 import { HashUtil } from 'src/app/utils/hash.util';
 
 @Injectable({
@@ -15,10 +15,10 @@ export class ThinkService {
   constructor(private httpClient: HttpClient) {}
 
   listAll() {
-    return this.httpClient.get<Think[]>(this.DEFAULT_URL);
+    return this.httpClient.get<Thinking[]>(this.DEFAULT_URL);
   }
 
-  create(think: Omit<Think, 'id'>) {
+  create(think: Omit<Thinking, 'id'>) {
     const id: string = HashUtil.generate();
 
     return this.httpClient.post<void>(this.DEFAULT_URL, { id, ...think });
@@ -33,10 +33,10 @@ export class ThinkService {
   getThinkById(thinkId: string) {
     const url: string = `${this.DEFAULT_URL}/${thinkId}`;
 
-    return this.httpClient.get<Think>(url);
+    return this.httpClient.get<Thinking>(url);
   }
 
-  update(thinkingId: string, thinking: Omit<Think, 'id'>) {
+  update(thinkingId: string, thinking: Omit<Thinking, 'id'>) {
     const url: string = `${this.DEFAULT_URL}/${thinkingId}`;
     return this.httpClient.put(url, thinking);
   }

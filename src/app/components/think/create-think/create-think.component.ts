@@ -1,4 +1,4 @@
-import { ModelThink, Think } from 'src/app/interfaces/think.interface';
+import { ModelThinking, Thinking } from 'src/app/interfaces/think.interface';
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -13,20 +13,20 @@ import { clearString } from 'src/app/utils/string.util';
 export class CreateThinkComponent {
   constructor(private thinkService: ThinkService, private router: Router) {}
 
-  think: Omit<Think, 'id'> = {
+  thinking: Omit<Thinking, 'id'> = {
     content: '',
     autor: '',
-    model: ModelThink.DEFAULT,
+    model: ModelThinking.DEFAULT,
   };
 
-  createThink() {
-    const think: Omit<Think, 'id'> = {
-      autor: clearString(this.think.autor),
-      content: clearString(this.think.content),
-      model: this.think.model,
+  createThinking() {
+    const thinking: Omit<Thinking, 'id'> = {
+      autor: clearString(this.thinking.autor),
+      content: clearString(this.thinking.content),
+      model: this.thinking.model,
     };
 
-    this.thinkService.create(think).subscribe({
+    this.thinkService.create(thinking).subscribe({
       next: () => this.router.navigateByUrl('/'),
     });
   }

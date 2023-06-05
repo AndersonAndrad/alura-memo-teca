@@ -1,11 +1,11 @@
-export interface Think {
+export interface Thinking {
   id: string;
   content: string;
-  model: ModelThink;
+  model: ModelThinking;
   autor: string;
 }
 
-export enum ModelThink {
+export enum ModelThinking {
   MODEL1 = 'modelo1',
   MODEL2 = 'modelo3',
   MODEL3 = 'modelo2',

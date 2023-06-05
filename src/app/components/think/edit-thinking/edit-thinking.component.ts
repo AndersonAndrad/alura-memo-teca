@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModelThink, Think } from 'src/app/interfaces/think.interface';
+import { ModelThinking, Thinking } from 'src/app/interfaces/think.interface';
 
 import { ThinkService } from 'src/app/services/think/think.service';
 import { clearString } from 'src/app/utils/string.util';
@@ -12,7 +12,7 @@ import { clearString } from 'src/app/utils/string.util';
 })
 export class EditThinkingComponent implements OnInit {
   constructor(
-    private thinkService: ThinkService,
+    private thinkingService: ThinkService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
@@ -21,23 +21,23 @@ export class EditThinkingComponent implements OnInit {
     this.getThinkingId();
   }
 
-  think: Think = {
+  thinking: Thinking = {
     id: '',
     content: '',
     autor: '',
-    model: ModelThink.DEFAULT,
+    model: ModelThinking.DEFAULT,
   };
 
-  updateThink() {
-    if (!clearString(this.think.id).length) return;
+  updateThinking() {
+    if (!clearString(this.thinking.id).length) return;
 
-    const think: Omit<Think, 'id'> = {
-      autor: clearString(this.think.autor),
-      content: clearString(this.think.content),
-      model: this.think.model,
+    const thinking: Omit<Thinking, 'id'> = {
+      autor: clearString(this.thinking.autor),
+      content: clearString(this.thinking.content),
+      model: this.thinking.model,
     };
 
-    this.thinkService.update(this.think.id, think).subscribe({
+    this.thinkingService.update(this.thinking.id, thinking).subscribe({
       next: () => this.router.navigateByUrl('/'),
     });
   }
@@ -55,8 +55,8 @@ export class EditThinkingComponent implements OnInit {
   }
 
   private loadThinking(thinkingId: string) {
-    this.thinkService.getThinkById(thinkingId).subscribe({
-      next: (thinking) => (this.think = thinking),
+    this.thinkingService.getThinkById(thinkingId).subscribe({
+      next: (thinking) => (this.thinking = thinking),
       /**
        * @TODO add catch when has any error
        */

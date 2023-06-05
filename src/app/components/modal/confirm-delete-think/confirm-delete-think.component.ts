@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModelThink, Think } from 'src/app/interfaces/think.interface';
+import { ModelThinking, Thinking } from 'src/app/interfaces/think.interface';
 
 import { ThinkService } from 'src/app/services/think/think.service';
 
@@ -10,11 +10,11 @@ import { ThinkService } from 'src/app/services/think/think.service';
   styleUrls: ['./confirm-delete-think.component.scss'],
 })
 export class ConfirmDeleteThinkComponent implements OnInit {
-  think: Think = {
+  think: Thinking = {
     id: '',
     autor: '',
     content: '',
-    model: ModelThink.DEFAULT,
+    model: ModelThinking.DEFAULT,
   };
 
   constructor(

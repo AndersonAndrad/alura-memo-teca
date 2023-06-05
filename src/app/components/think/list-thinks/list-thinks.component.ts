@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Think } from 'src/app/interfaces/think.interface';
 
+import { Thinking } from 'src/app/interfaces/think.interface';
 import { ThinkService } from 'src/app/services/think/think.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { ThinkService } from 'src/app/services/think/think.service';
 export class ListThinksComponent implements OnInit {
   constructor(private thinkService: ThinkService) {}
 
-  thinkList: Think[] = [];
+  thinkList: Thinking[] = [];
 
   ngOnInit(): void {
     this.loadThinks();
