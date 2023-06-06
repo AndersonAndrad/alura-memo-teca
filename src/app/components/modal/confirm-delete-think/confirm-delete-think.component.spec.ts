@@ -1,23 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { AppModule } from 'src/app/app.module';
 import { ConfirmDeleteThinkComponent } from './confirm-delete-think.component';
 
-describe('ConfirmDeleteThinkComponent', () => {
+describe(ConfirmDeleteThinkComponent.name, () => {
   let component: ConfirmDeleteThinkComponent;
   let fixture: ComponentFixture<ConfirmDeleteThinkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConfirmDeleteThinkComponent ]
-    })
-    .compileComponents();
+      imports: [AppModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ConfirmDeleteThinkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it(`${ConfirmDeleteThinkComponent.name} should be created`, () => {
     expect(component).toBeTruthy();
   });
 });

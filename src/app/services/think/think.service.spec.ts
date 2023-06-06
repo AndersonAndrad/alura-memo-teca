@@ -1,13 +1,12 @@
-import { TestBed } from '@angular/core/testing';
-
+import { HttpClient } from '@angular/common/http';
 import { ThinkService } from './think.service';
 
 describe('ThinkService', () => {
   let service: ThinkService;
+  let httpClient: HttpClient;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ThinkService);
+    service = new ThinkService(httpClient);
   });
 
   it('should be created', () => {
